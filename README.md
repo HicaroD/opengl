@@ -7,7 +7,6 @@ o OpenGL fará é transformar as coordenadas 3D em pixels 2D que possam ser
 renderizadas na tela. Tudo isso é feito pela pipeline gráfica do OpenGL.
 
 Esse processo de transformação pode ser resumido em duas grandes etapas:
-
 Coordenadas 3D para pixels 2D -> Pixels 2D para pixels coloridos
 
 O pipeline gráfico do OpenGL recebera uma lista de vértices como input. Pense
