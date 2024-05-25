@@ -1,0 +1,14 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-o",
+      "gl.out",
+      "hello.cpp"
+    ],
+    "directory": "/home/hicaro/Documentos/Prototypes/learning_opengl",
+    "file": "/home/hicaro/Documentos/Prototypes/learning_opengl/hello.cpp",
+    "output": "/home/hicaro/Documentos/Prototypes/learning_opengl/gl.out"
+  }
+]
