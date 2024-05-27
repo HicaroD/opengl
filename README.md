@@ -1,7 +1,5 @@
 # OpenGL
 
-## Olá, triângulo
-
 Tudo em OpenGL é 3D, mas a janela é apenas um array de pixels 2D. Muito do que
 o OpenGL fará é transformar as coordenadas 3D em pixels 2D que possam ser
 renderizadas na tela. Tudo isso é feito pela pipeline gráfica do OpenGL.

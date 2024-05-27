@@ -18,14 +18,6 @@
 #define WINDOW_WIDTH 1000
 #define WINDOW_HEIGHT 1000
 
-// OpenGL works in 3D, but we want a 2D triangle, therefore our z axis for each
-// vertex is 0
-static float TRIANGLE_VERTICES[] = {
-    -0.5f, -0.5f, 0.0f, //
-    0.5f,  -0.5f, 0.0f, //
-    0.0f,  0.5f,  0.0f, //
-};
-
 int main(int argc, char **argv) {
   if (uint32_t err = SDL_Init(SDL_INIT_VIDEO); err < 0) {
     std::cerr << "Unable to initialize SDL: " << SDL_GetError() << std::endl;
@@ -42,21 +34,6 @@ int main(int argc, char **argv) {
               << std::endl;
     return 1;
   }
-
-  // Vertex buffer object (VBO) is an OpenGL object Basically, we create an
-  // VBO, allocate memory on our GPU and it is used for storing our vertices.
-
-  // GLuint vertex_buffer_object_id;
-  // glGenBuffers(1, &vertex_buffer_object_id);
-  // glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer_object_id);
-
-  // Copying triangle vertices to the GPU's memory The last argument means we
-  // want to send the data once and use it many times Therefore, it is a static
-  // draw, however we have other types, such as GL_DYNAMIC_DRAW que fala que
-  // o dado será usado e alterado várias vezes.
-
-  // glBufferData(GL_ARRAY_BUFFER, sizeof(TRIANGLE_VERTICES), TRIANGLE_VERTICES,
-  //              GL_STATIC_DRAW);
 
   int32_t running = 1;
   int32_t fullscreen = 0;
@@ -83,13 +60,18 @@ int main(int argc, char **argv) {
         running = 0;
       }
     }
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glBegin(GL_TRIANGLES);
+    // This method only exists in very early GL versions
+    // Probably not even used anymore (don't know)
+    glVertex2f(-0.5f, -0.5f);
+    glVertex2f(0.f, 0.5f);
+    glVertex2f(0.5f, -0.5f);
+    glEnd();
 
     // Resize screen
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
-
-    // Clear screen and set some color
-    glClearColor(.5f, .5f, .5f, 0.f);
-    glClear(GL_COLOR_BUFFER_BIT);
 
     // Update window with OpenGL rendering
     SDL_GL_SwapWindow(window);
