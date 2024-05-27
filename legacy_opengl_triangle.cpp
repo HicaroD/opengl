@@ -62,9 +62,8 @@ int main(int argc, char **argv) {
     }
     glClear(GL_COLOR_BUFFER_BIT);
 
+    // Legacy OpenGL
     glBegin(GL_TRIANGLES);
-    // This method only exists in very early GL versions
-    // Probably not even used anymore (don't know)
     glVertex2f(-0.5f, -0.5f);
     glVertex2f(0.f, 0.5f);
     glVertex2f(0.5f, -0.5f);
