@@ -88,3 +88,10 @@ temos o fragment shader, que será usado para decidir qual cor o determinado
 pixel / fragmento terá na tela. O fragment shader irá rodar para cada pixel,
 então precisa ter cuidado para não colocar operações super pesadas no fragment
 shader.
+
+Uma coisa interessante a se notar é que quando estamos criando quadrados, por
+exemplo, nós construímos dois triângulos. Esses dois triângulos se conectam
+para formar um quadrado. Se não tivermos cuidado, nós iremos repetir vértices e
+isso pode consumir memória de forma desnecessária. Em razão disso, podemos usar
+index buffers para reaproveitar vértices e usar uma quantidade menor de recursos
+computacionais.

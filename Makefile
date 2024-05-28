@@ -9,3 +9,6 @@ legacy_opengl_triangle: legacy_opengl_triangle.cpp
 
 modern_opengl_triangle: modern_opengl_triangle.cpp
 	 $(CXX) modern_opengl_triangle.cpp -o $(OUT) $(LDFLAGS)
+
+modern_opengl_square: modern_opengl_square.cpp
+	 $(CXX) modern_opengl_square.cpp -o $(OUT) $(LDFLAGS)
